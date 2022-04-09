@@ -55,7 +55,7 @@ class CountdownTimer:
         #Reset has been made if timer starts go off or it has started wrong time.
         #All three skills are made same way
         #V2.0 timers are looking cpu time. Should be more accurate.
-        blueTargetTime = 6.4
+        blueTargetTime = 6.44
         bluePlaysong = False
         self.bluestop_loop = False
         blueReadKeyStatement = False
@@ -66,7 +66,7 @@ class CountdownTimer:
             if keyboard.read_key() == "q":
                 blueReadKeyStatement = True
                 blueFirst_time = time.time()
-                blueFirst_time -= 0.2
+                blueFirst_time -= 0.4
                 time.sleep(0.2)
             
         while not self.bluestop_loop:
@@ -87,8 +87,10 @@ class CountdownTimer:
                         blueFirst_time = time.time()
                         blueFirst_time -= 0.2
                         time.sleep(0.2)
-            if BlueTimeGone >= blueTargetTime:
+            if BlueTimeGone > blueTargetTime:
+                blueLeftOverTime = blueTargetTime - BlueTimeGone
                 blueFirst_time = time.time()
+                blueFirst_time += blueLeftOverTime
                 bluePlaysong = False
 
             if BlueTimeGone >= 5.0 and BlueTimeGone <= 5.1 and bluePlaysong == False:
@@ -116,7 +118,7 @@ class CountdownTimer:
                 poopReadKeyStatement = True
                 poopFirst_time = time.time()
                 poopFirst_time -= 0.2
-                time.sleep(0.2)
+                time.sleep(0.3)
             
         while not self.poopstop_loop:
             poopGoingTime = time.time()
@@ -135,8 +137,10 @@ class CountdownTimer:
                         poopFirst_time = time.time()
                         poopFirst_time -= 0.2
                         time.sleep(0.2)
-            if poopTimeGone >= poopTargetTime:
+            if poopTimeGone > poopTargetTime:
+                poopLeftOverTime = poopTargetTime - poopTimeGone
                 poopFirst_time = time.time()
+                poopFirst_time += poopLeftOverTime
                 poopPlaysong = False
 
             if poopTimeGone >= 18.0 and poopTimeGone <= 18.1 and poopPlaysong == False:
