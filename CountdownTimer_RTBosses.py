@@ -179,13 +179,13 @@ class CountdownTimer:
                 P.start()
                 
     def playPoop(self):
-        playsound(ostdir.Path.joinpath(ostdir.Path(__file__).parent,"soundeffect","WaterDrop.mp3").as_posix())
+        playsound("C:/soundeffect/WaterDrop.mp3")
 
     def playBlue(self):
-        playsound(ostdir.Path.joinpath(ostdir.Path(__file__).parent,"soundeffect","Quack.mp3").as_posix())
+        playsound("C:/soundeffect/Quack.mp3")
 
     def playGreen(self):
-        playsound(ostdir.Path.joinpath(ostdir.Path(__file__).parent,"soundeffect","Boing.mp3").as_posix())
+        playsound("C:/soundeffect/Boing.mp3")
 
     #Greenbeam is not yet optimized
     def start_thread_greenbeam(self):
